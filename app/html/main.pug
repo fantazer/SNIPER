@@ -1,6 +1,63 @@
 include block_html/_style.pug
 include block_html/_include.pug
 
-+header()
+.panel
+	-
+		var items = [
+			{'icon':'house','name':'Начало'},
+			{'icon':'creative','name':'Преимущества'},
+			{'icon':'banknote','name':'Стоимость'},
+			{'icon':'diamond','name':'Почему мы?'},
+			{'icon':'gears','name':'Технологии'},
+			{'icon':'startup','name':'Команда'},
+			{'icon':'contact','name':'Контакты'}
+			];
+	each item in items
+		.panel__el
+			.panel__el-icon
+				+icon(item.icon,"icon")
+			.panel__el-text #{item.name}
 
+.main(style="background-image:url('img/main-page-banner.jpg')")
+	.header-wrap
+		.main-cont
+			.header
+				a(href="/").header-logo
+					img(src="img/logo-white.png", alt="")
+				.header-menu
+					a(href="#").header-menu__el Что мы предлагаем?
+					a(href="#").header-menu__el Почему мы?
+					a(href="#").header-menu__el Технологии
+				.header-phone
+					a(href="tel:8 800 775 53 46").header-phone__el 8 800 775 53 46
+					a(href="tel:8 383 247 88 94").header-phone__el 8 383 247 88 94
+				a(href="#").header-get Консультация
+
+	.main-block
+		.main-cont
+			.main-wrap
+				.main-content
+					.main-title Продвиньте <br> Ваш сайт в топ <br> с &nbsp
+						span оплатой за результат
+						| <br> и &nbsp
+						span гарантиями
+						| !
+					.main-text Большой выбор инструментов интернет-маркетинга: SEO-продвижение, контекстная реклама, SMM, веб-аналитика и многое другое. <br>
+						<b> Комплексный подход!</b>
+					.offer
+						.offer-wrap
+							.offer-el
+								span от
+								.offer-el__val 17
+								span тысяч рублей
+							.offer-plus
+								+icon("plus","icon")
+							.offer-el
+								span от
+								.offer-el__val 2
+								span рублей за визит
+						.offer-text В месяц продвижения с гарантией роста трафика и позиций
+					.offer-get  Получить индивидуальное предложение
+				.main-img
+					img(src="img/seo.png", alt="")
 include ./block_html/_script.pug

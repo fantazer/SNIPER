@@ -18,6 +18,7 @@ gray = #AAAAAA
 black = #111111
 
 $blue = #3a90c8
+$yellow = #ffd355
 
 $main-text-color = black
 $link-color = black
@@ -31,7 +32,7 @@ $border-color = #dddddd
 //Add fotn rub write .rub a - (a,b,c,d - change type font)
 
 //webfont('PT Sans', 'PT Sans', 'normal')
-$v-font =  'Roboto', sans-serif
+$v-font =  'Montserrat', sans-serif
 
 typeSize(fontSm,font)
 	+below(768px)
@@ -127,6 +128,7 @@ btnStyleLight(br-btn,color-btn)
 	border 0px
 	color blue
 	text-align: center
+	font-weight:bold
 	&:hover
 		cursor pointer
 
@@ -139,9 +141,9 @@ btnStyleLight(br-btn,color-btn)
 
 .btn--md
 	@extend .btn
-	font-size 15px
-	padding 20px 45px
-
+	font-size 14px
+	padding 15px 35px
+	br(35px)
 .btn--lg
 	@extend .btn
 	font-size 20px
@@ -155,14 +157,14 @@ btnStyleLight(br-btn,color-btn)
 
 .btn--mark
 	@extend .btn
-	color white
-	background $blue
+	color #a10003
+	background $yellow
 	.nav-icon
 		fill white
 	&:hover
-		background-color darken($blue,20)
+		background-color lighten($yellow,5)
 	&:active
-		background-color darken($blue,20)
+		background-color lighten($yellow,5)
 	input[type="submit"]
 		border 0
 	.nav-icon

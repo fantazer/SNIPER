@@ -144,3 +144,124 @@ body
 	margin-top: 30px
 	margin-bottom: 40px
 //modal===end
+
+.main
+	bg-full()
+	height: 100vh
+	border-top 6px solid #d12024
+//.header-wrap
+//.main-cont
+.header
+	flex(between)
+	padding-top: 15px
+//.header-logo
+.header-menu
+	flex(between)
+	width: 40%
+.header-menu__el
+	color white
+	tr(all)
+	&:hover
+		opacity:.7
+		color white
+//.header-phone
+.header-phone__el
+	display: block
+	color white
+	font-weight:700
+	tr(all)
+	&:hover
+		opacity:.7
+		color white
+
+.header-get
+	@extend .btn--md
+	@extend .btn--mark
+
+.main-wrap
+	flex(between)
+	height: calc(100vh - 68px)
+//.main-cont
+.main-content
+	width: 54%
+.main-title
+	font-weight:900
+	font-size: 44px
+	color white
+	margin-bottom: 20px
+	span
+		display: inline
+		color $yellow
+.main-text
+	color white
+	line-height: 1.6
+	margin-bottom: 4%
+//.offer
+.offer-wrap
+	width: 450px
+	flex(between)
+	margin-bottom: 3%
+.offer-el
+	font-size: 32px
+	font-weight:700
+	color white
+	width: 150px
+.offer-el__val
+	color $yellow
+	display: inline-block
+	font-size: 90px
+.offer-plus
+	.icon
+		size 58px
+		fill $yellow
+
+.offer-text
+	color white
+	opacity: .8
+	margin-bottom: 5%
+.offer-get
+	@extend .btn--md
+	@extend .btn--mark
+//.main-img
+
+.panel
+	width 65px
+	background bg-grey
+	position fixed
+	top 22%
+	left: 0
+	overflow hidden
+	z-index 10000
+	tr(all)
+	background: #ca1b20
+	&:hover
+		width 270px
+.panel__el
+	flex(between)
+	justify-content flex-start
+	padding-right 20px
+	overflow hidden
+	min-width 300px
+	tr(all)
+	border-bottom 1px solid #b31b1f
+	&:last-child
+		border-bottom 0
+	&:hover
+		background $yellow
+		cursor pointer
+		.panel__el-text
+			color black
+		.icon
+			fill black
+.panel__el-icon
+	.icon
+		size 35px
+		fill white
+	size 65px
+	flex(mid)
+.panel__el-text
+	color white
+	font-size 16px
+	font-weight 700
+	padding-left: 20px
+
