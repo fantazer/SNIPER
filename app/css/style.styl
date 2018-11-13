@@ -157,10 +157,13 @@ body
 //.header-logo
 .header-menu
 	flex(between)
-	width: 40%
+	width: 35%
 .header-menu__el
 	color white
 	tr(all)
+	font-weight: 700
+	up()
+	font-size: 12px
 	&:hover
 		opacity:.7
 		color white
@@ -265,3 +268,191 @@ body
 	font-weight 700
 	padding-left: 20px
 
+.section
+	//height: 100vh
+	width: 100%
+	flex(mid)
+	padding: 150px 0
+.case
+	f()
+	justify-content: space-between
+.case-chart
+	width: 60%
+.case-info
+	width: 35%
+.section-title
+	color $red
+	font-size: 40px
+	font-weight: 900
+	up()
+	margin-bottom: 5%
+
+.section--mount
+	background-repeat: no-repeat
+	background-position: bottom right
+
+
+.case-el
+	f()
+	margin-bottom: 20px
+
+.case-el__icon
+	margin-right: 40px
+	.icon
+		size 50px
+		fill $red
+//.icon
+//.case-el__content
+.case-el__title
+	font-weight:700
+	margin-bottom: 10px
+	font-size: 20px
+	line-height: 1
+.case-el__val
+	font-size: 40px
+	color $red
+	font-weight:700
+	margin-bottom: 5px
+.case-el__val-descr
+	color $red
+	margin-bottom: 10px
+	font-weight:700
+
+.case-el__text
+	line-height: 1.4
+	font-family: 'PT Sans', sans-serif
+//Добавялем стили для этого элемента
+@-webkit-keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+//Анимация из animateCSs
+@keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.logo-black
+	display: none
+
+.shrink
+	position fixed
+	top 0
+	left 0
+	background white
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out;
+	z-index 2
+	box-shadow 0 0 10px #dbdbdb
+	height: 60px
+	//border-top 1px solid $red
+	.header-logo
+		width: 140px
+	.header-menu__el
+		color black
+	.header-phone__el
+		color black
+	.header
+		padding: 10px 0
+	.logo-black
+		display: block
+	.logo-white
+		display: none
+.section-gray
+	background: #f4f4f4
+.advant
+	flex(between)
+	fw()
+.advant__el
+	width: 30%
+	f()
+	margin-bottom: 6%
+.advant__el-icon
+	size 50px
+	margin-right: 30px
+
+.advant__el-content
+	width: calc(100% - 90px)
+
+.advant__el-title
+	font-weight: 900
+	color black
+	font-size: 24px
+	margin-bottom: 10px
+
+.advant__el-text
+	line-height: 1.4
+	font-family: 'PT Sans', sans-serif
+
+.offer
+	f()
+	justify-content: space-between
+.offer__el
+	f()
+	fl()
+	width: 23%
+	padding: 40px 30px
+	background: white
+.offer__el-title
+	font-size: 24px
+	margin-bottom: 30px
+	font-weight:900
+
+.offer__el-val
+	margin-bottom: 15px
+	font-weight:700
+	color $red
+.offer__el-text
+	font-family:'PT Sans', sans-serif
+	margin-bottom: 30px
+	line-height: 1.4
+.offer__el-get
+	margin-top: auto
+	@extend .btn--md
+	@extend .btn--mark
+	padding: 15px
+
+//.why
+.why-head
+	f()
+	justify-content: space-between
+.why-head__el
+	width: calc(50% - 50px)
+	padding: 30px
+	font-size: 20px
+	font-weight:900
+
+.why-row
+	f()
+	justify-content: space-between
+	&:nth-child(even)
+		background: white
+.why__text
+	padding: 30px
+	width: calc(50% - 50px)
+	font-family:'PT Sans', sans-serif
+	font-size: 16px
+	line-height: 1.4
+	f()
+	align-items: center
+.why__icon
+	width: 100px
+	padding: 20px 0
+	flex(mid)
+	.icon
+		size 50px
+		fill $red

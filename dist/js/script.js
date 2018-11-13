@@ -1,5 +1,25 @@
 $(document).ready(function () {
 
+	//animate-header
+	var shrinkHeader = 250;
+	var heightHeader=$('.header-wrap').height();
+	$(window).scroll(function() {
+		var scroll = $(this).scrollTop();
+		if ( scroll >= shrinkHeader ) {
+				$('body').css('paddingTop',heightHeader);
+				$('.header-wrap').addClass('shrink');
+			}
+			else {
+					$('body').css('paddingTop',0);
+					$('.header-wrap').removeClass('shrink');
+			}
+	});
+
+	$(window).resize(function(){
+		heightHeader=$('.header-wrap').height();
+	});
+	//animate-header===end
+
 	//modal
 	var modalState = {
 		"isModalShow": false, //state show modal
