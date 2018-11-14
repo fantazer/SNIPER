@@ -171,6 +171,22 @@ btnStyleLight(br-btn,color-btn)
 	.nav-icon
 		fill white
 
+
+.btn--red
+	@extend .btn
+	color white
+	background $red
+	.nav-icon
+		fill white
+	&:hover
+		background-color lighten($red,5)
+	&:active
+		background-color lighten($red,5)
+	input[type="submit"]
+		border 0
+	.nav-icon
+		fill white
+
 .btn--disable
 	@extend .disabled
 	border 1px solid $border-color
@@ -259,10 +275,10 @@ button
 	display block!important
 	margin-bottom 10px
 	placeholder(#888888)
-	background: #f7f7f8
+	background: white
 	tr(all)
 	&:focus
-		border 1px solid blue
+		border 1px solid $yellow
 
 .style-label
 	display flex
@@ -278,14 +294,14 @@ button
 		top 0
 		left -9999px
 	.sytle-input-element
-		width 30px
-		height 30px
+		width 20px
+		height 20px
 		position relative
 		display inline-block
 		margin-right 10px
 		background white
 		border 1px solid #cfcfcf
-		br(8px)
+		br(2px)
 		cp()
 		tr(all)
 		&:hover
@@ -298,8 +314,9 @@ button
 			color white
 			.icon-check
 				display block
-				fill #000000
-				size 16px
+				fill $red
+				size 12px
+
 
 .style-label--radio
 	input

@@ -1,20 +1,23 @@
 {
-	"name": "gulpBower",
-	"version": "0.0.0",
-	"authors": [
-		"fantazer <fantazer@text.ru>"
-	],
-	"license": "MIT",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-		"jquery": "~2.1.4",
-		"normalize.css": "~3.0.3",
-		"slick-carousel": "^1.8.1"
-	}
+  "name": "gulpBower",
+  "version": "0.0.0",
+  "authors": [
+    "fantazer <fantazer@text.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize.css": "~3.0.3",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "page-scroll-to-id": "^1.5.9"
+  }
 }

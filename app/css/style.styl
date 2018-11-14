@@ -200,29 +200,29 @@ body
 	line-height: 1.6
 	margin-bottom: 4%
 //.offer
-.offer-wrap
+.tender-wrap
 	width: 450px
 	flex(between)
 	margin-bottom: 3%
-.offer-el
+.tender-el
 	font-size: 32px
 	font-weight:700
 	color white
 	width: 150px
-.offer-el__val
+.tender-el__val
 	color $yellow
 	display: inline-block
 	font-size: 90px
-.offer-plus
+.tender-plus
 	.icon
 		size 58px
 		fill $yellow
 
-.offer-text
+.tender-text
 	color white
 	opacity: .8
 	margin-bottom: 5%
-.offer-get
+.tender-get
 	@extend .btn--md
 	@extend .btn--mark
 //.main-img
@@ -256,6 +256,13 @@ body
 			color black
 		.icon
 			fill black
+.panel__el--active
+	background $yellow
+	cursor pointer
+	.panel__el-text
+		color black
+	.icon
+		fill black!important
 .panel__el-icon
 	.icon
 		size 35px
@@ -281,12 +288,17 @@ body
 .case-info
 	width: 35%
 .section-title
+	up()
 	color $red
 	font-size: 40px
 	font-weight: 900
-	up()
 	margin-bottom: 5%
+	line-height: 1.4
+.section-title--white
+	color white
 
+.section-title--sm
+	width: 80%
 .section--mount
 	background-repeat: no-repeat
 	background-position: bottom right
@@ -358,7 +370,7 @@ body
 	animation:  slideInDown  1s 1 ease-in-out;
 	z-index 2
 	box-shadow 0 0 10px #dbdbdb
-	height: 60px
+	height: 65px
 	//border-top 1px solid $red
 	.header-logo
 		width: 140px
@@ -426,7 +438,8 @@ body
 	@extend .btn--mark
 	padding: 15px
 
-//.why
+.why
+	margin-bottom: 100px
 .why-head
 	f()
 	justify-content: space-between
@@ -456,3 +469,133 @@ body
 	.icon
 		size 50px
 		fill $red
+
+
+.form-order-wrap
+	max-width 550px
+	margin-left: auto
+	margin-right: auto
+.input
+	width: 100%
+.input-row
+	margin-bottom: 20px
+
+.form-order-get
+	@extend .btn--md
+	@extend .btn--red
+	margin-left: auto
+	margin-right: auto
+	display: block
+	margin-top: 40px
+
+//.tabs
+.tabs-head
+	f()
+	justify-content: space-between
+.tabs-head__el
+	width: 19%
+	text-align: center
+	background: #f9f9f9
+	cp()
+	height: 60px
+	flex(mid)
+	tr(all)
+	border-top 2px solid #f9f9f9
+	font-weight:600
+	up()
+	font-size: 12px
+	&:hover
+		border-top 2px solid $red
+		color $red
+		background: white
+
+.tabs-head__el--active
+	border-top 2px solid $red
+	color $red
+	background: white
+.tabs-content
+	padding: 80px 80px 120px 80px
+	background: white
+	display: none
+	height: 500px
+.tabs-content--active
+	f()
+	justify-content: space-between
+.tabs-col
+	width: 23%
+.tabs-col__icon
+	.icon
+		size 60px
+		margin-bottom: 20px
+		fill $red
+.tabs-col__title
+	font-weight:700
+
+.tabs-col__text
+	font-family: 'PT Sans', sans-serif
+	ul
+		padding-left: 15px
+		li
+			margin-bottom: 20px
+
+.command
+	display: grid
+	grid-gap 30px
+	grid-template-columns repeat(4, 1fr)
+.command__el
+	background: white
+	padding: 60px 20px 100px 20px
+	flex(mid)
+	fl()
+	box-shadow 0px 3px 20px #e3e3e3
+	cp()
+	br(10px)
+.command__el-img
+	margin-bottom: 100px
+.command__el-title
+	font-weight: 700
+	font-size: 18px
+	color $red
+
+.section-order
+	background-image: linear-gradient(to top, rgba(152, 0, 0, 0.5) 0%, rgba(152, 0, 0, 0) 100%);
+	background-color: #d32b1c
+	min-height 100vh
+
+.order
+	margin-bottom: 40px
+
+.order-form
+	width: 60%
+
+.form-get
+	@extend .btn--md
+	padding: 20px 50px
+	up()
+.form-get--yellow
+	@extend .btn--mark
+
+.order-title
+	font-weight: 700
+	margin-bottom: 40px
+	color white
+	opacity: .8
+
+.agreement
+	margin-bottom: 40px
+	.style-label
+		align-items: flex-start
+	.sytle-input-text
+		width: calc(100% - 60px)
+	.sytle-input-text
+		color white
+		font-family: "PT Sans"
+		a
+			color white
+			text-decoration: underline
+			display: inline-block
+
+.order-phone
+	color white
+	font-weight: 700
+	font-size: 18px
