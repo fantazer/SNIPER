@@ -1,7 +1,7 @@
 (function($){
     $(window).load(function(){
         $("a[rel='m_PageScroll2id']").mPageScroll2id({
-				    offset:0,
+				    offset:60,
 				    highlightClass:"panel__el--active",
 				    onComplete:function(){
 				    	//$('.header-navs').hide();
@@ -11,7 +11,13 @@
  })(jQuery);
 
 $(document).ready(function () {
+	$('.panel__el').on('click', function (e) {
+	e.preventDefault();
 
+	$('html, body').animate({
+		scrollTop: $($(this).attr('href')).offset().top - 50
+	}, 500, 'linear');
+});
 	//scroll to id
 
 	//scroll to id===end
@@ -28,25 +34,24 @@ $(document).ready(function () {
 		$('.tabs-head__el').removeClass('tabs-head__el--active');
 		$(this).addClass('tabs-head__el--active');
 		var current = $(this).index();
-		console.log(current);
-		$('.tabs-content').each(function(){
+		$('.tabs-content-wrap').each(function(){
 			$(this).index();
 			if($(this).index()===current+1){
-				$(this).addClass('tabs-content--active');
+				$(this).find('.tabs-content').addClass('tabs-content--active');
 			}else{
-				$(this).removeClass('tabs-content--active');
+				$(this).find('.tabs-content').removeClass('tabs-content--active');
 			}
 		})
 	});
 	//tab===end
 
 	//animate-header
-	var shrinkHeader = 250;
+	var shrinkHeader = 50;
 	var heightHeader=$('.header-wrap').height();
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
 		if ( scroll >= shrinkHeader ) {
-				//$('body').css('paddingTop',heightHeader);
+				$('body').css('paddingTop',heightHeader);
 				$('.header-wrap').addClass('shrink');
 			}
 			else {
@@ -60,13 +65,14 @@ $(document).ready(function () {
 	});
 	//animate-header===end
 
-	//modal
+	//modals
 	var modalState = {
 		"isModalShow": false, //state show modal
 		"scrollPos": 0
 	};
-	$('.modal-content').click(function (event) {
+	$('.modal-filter').click(function (event) {
 		event.stopPropagation();
+		console.log(this);
 	});
 
 	var openModal = function () {
@@ -76,7 +82,7 @@ $(document).ready(function () {
 			$('body').css({
 				overflow: 'hidden',
 				position: 'fixed',
-				overflowY: 'scroll',
+				overflowY: 'hidden',
 				top: -modalState.scrollPos,
 				width: '100%'
 			});
@@ -115,10 +121,48 @@ $(document).ready(function () {
 		initModal(currentModal);
 	});
 
-	$('.modal-layer , .modal-close').click(function () {
+	$('.modal-filter , .modal-close').click(function () {
 		closeModal();
 	});
 	//modals===end
+
+	var currentSize = $(window).width();
+	//mobile slider
+	var sliderMobile = function(){
+			if( currentSize < 641){
+					$('.slider').not('.slick-initialized').slick({
+						responsive: [
+							{
+								breakpoint: 9999,
+								settings: "unslick"
+							},
+							{
+								breakpoint: 640,
+								settings: {
+									slidesToShow: 1,
+									slidesToScroll: 1,
+									prevArrow: false,
+    							nextArrow: false,
+									dots: true,
+								}
+							}
+						]
+					});
+			}
+	};
+
+	sliderMobile();
+
+
+	$(window).resize(function(){
+		var currentSize = $(window).width();
+		sliderMobile();
+		return currentSize;
+	});
+	//mobile slider === end
+
+
+
 
 	function detectIE() {
 		var ua = window.navigator.userAgent;
@@ -156,29 +200,99 @@ $(document).ready(function () {
 	}
 	//for init SVG
 
-	// ==== clear storage =====
+	//mobile menu
+		$('.head-toggle').click(function(event){
+			event.stopPropagation();
+			$('.head-wrap').toggleClass('head--up');
+			$(this).toggleClass('head-toggle--open');
+			$('.slide-menu').toggleClass('slide-menu--open');
+		});
+
+		$('.slide-menu').on("click", function (event) {
+			event.stopPropagation();
+		});
+
+		$(document).add('.modal-get').on("click", function () {
+				$('.head-wrap').removeClass('head--up');
+				$('.head-toggle').removeClass('head-toggle--open');
+				$('.slide-menu').removeClass('slide-menu--open');
+				console.log(modalState.isModalShow);
+				if(modalState.isModalShow == false){
+					$('body').removeClass('body-fix')
+			}
+		});
+	//mobile menu===end
+
+
+	//validate
+	$('.validate-form').each(function () {
+		var curentForm = $(this);
+		$(this).validate({
+			highlight: function (element) { //даем родителю класс если есть ошибка
+				$(element).parent().addClass("field-error");
+			},
+			unhighlight: function (element) {
+				$(element).parent().removeClass("field-error");
+			},
+			rules: { //правила для полей
+				name: {
+					required: true,
+				},
+				phone: {
+					required: true,
+					minlength: 5,
+					number: true
+				},
+				adres: {
+					required: true,
+				},
+				agree: {
+					required: true
+				}
+			},
+			messages: {
+				name: {
+					required: 'Обязательное поле',
+				},
+				phone: {
+					required: 'Обязательное поле',
+					number: 'Введите правильный номер',
+					minlength: 'Номер должен быть длиннее',
+				},
+				adres: {
+					required: 'Обязательное поле',
+				},
+				agree: {
+					required: false,
+				}
+			},
+			submitHandler: function (form) {
+				$.ajax({ //отправка ajax
+					type: "POST",
+					url: "sender.php",
+					data: $(form).serialize(),
+					timeout: 3000,
+				});
+				closeModal();
+				initModal("truemessage");
+				setTimeout(function () {
+					closeModal();
+					$(':input', '.validate-form') //очитска формы от данных
+						.not(':button, :submit, :reset, :hidden')
+						.val('')
+						.removeAttr('checked')
+						.removeAttr('selected')
+				}, 2500)
+
+			}
+		});
+	});
 	localStorage.clear();
 	sessionStorage.clear();
 	$(window).unload(function () {
 		localStorage.clear();
 	});
-	// ==== clear storage end =====
 
-
-	/* ###### For SlideToggle Elements  ######*/
-	/*var hideToggle = function(targetClick,toggleEl) {
-		$(targetClick).click(function(event){
-				event.stopPropagation();
-				$(toggleEl).slideToggle("fast");
-		});
-		$(toggleEl).on("click", function (event) {
-			event.stopPropagation();
-		});
-		$(document).on("click", function () {
-				$(toggleEl).hide();
-		});
-	}
-	hideToggle('.icon-bars','.top-menu_link');*/
 
 })
 

@@ -15,8 +15,8 @@
 		<meta name="description" itemprop="description" content="" />
 		<!--build:css css/vendor.css-->
 		<link rel="stylesheet" href="bower/normalize.css/normalize.css" />
-		<!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick.css")-->
-		<!--link(rel="stylesheet", href="bower/slick-carousel/slick/slick-theme.css")-->
+		<link rel="stylesheet" href="bower/slick-carousel/slick/slick.css" />
+		<link rel="stylesheet" href="bower/slick-carousel/slick/slick-theme.css" />
 		<!--endbuild-->
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-edit.css" />
@@ -24,6 +24,60 @@
 
 	<body>
 		<!--panel-->
+		<div class="slide-menu">
+			<div class="slide-menu__list"><a class="panel__el" href="#tostart" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#house"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Начало</div>
+				</a><a class="panel__el" href="#toadvant1" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#creative"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Преимущества</div>
+				</a><a class="panel__el" href="#topay" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#banknote"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Стоимость</div>
+				</a><a class="panel__el" href="#towhy" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#diamond"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Почему мы?</div>
+				</a><a class="panel__el" href="#totech" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#gears"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Технологии</div>
+				</a><a class="panel__el" href="#tocommand" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#startup"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Команда</div>
+				</a><a class="panel__el" href="#tocontact" rel="m_PageScroll2id">
+					<div class="panel__el-icon">
+						<svg class="icon">
+							<use xlink:href="#contact"></use>
+						</svg>
+					</div>
+					<div class="panel__el-text">Контакты</div>
+				</a>
+				<div class="slide-menu-get modal-get" data-modal="order">Консультация</div>
+			</div>
+		</div>
 		<div class="panel"><a class="panel__el" href="#tostart" rel="m_PageScroll2id">
 				<div class="panel__el-icon">
 					<svg class="icon">
@@ -81,8 +135,17 @@
 				<div class="main-cont">
 					<div class="header"><a class="header-logo" href="/"><img class="logo-white" src="img/logo-white.png" alt="" />
 							<!--img(src="img/logo-white-2.png", alt="" class="logo-black")--><img class="logo-black" src="img/logo-black.png" alt="" /></a>
-						<div class="header-menu"><a class="header-menu__el" href="#">Что мы предлагаем?</a><a class="header-menu__el" href="#">Почему мы?</a><a class="header-menu__el" href="#">Технологии</a></div>
-						<div class="header-phone"><a class="header-phone__el" href="tel:8 800 775 53 46">8 800 775 53 46</a><a class="header-phone__el" href="tel:8 383 247 88 94">8 383 247 88 94</a></div><a class="header-get" href="#">Консультация</a>
+						<div class="header-menu"><a class="header-menu__el" href="#topay" rel="m_PageScroll2id">Что мы предлагаем?</a><a class="header-menu__el" href="#towhy" rel="m_PageScroll2id">Почему мы?</a><a class="header-menu__el" href="#totech" rel="m_PageScroll2id">Технологии</a></div>
+						<div class="header-phone"><a class="header-phone__el" href="tel:8 800 775 53 46">8 800 775 53 46</a><a class="header-phone__el" href="tel:8 383 247 88 94">8 383 247 88 94</a></div>
+						<div class="header-get modal-get" data-modal="order">Консультация</div>
+						<div class="head-toggle">
+							<svg class="icon icon-open">
+								<use xlink:href="#menu"></use>
+							</svg>
+							<svg class="icon icon-close">
+								<use xlink:href="#close"></use>
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -109,7 +172,7 @@
 								</div>
 								<div class="tender-text">В месяц продвижения с гарантией роста трафика и позиций</div>
 							</div>
-							<div class="tender-get"> Получить индивидуальное предложение</div>
+							<div class="modal-get tender-get" data-modal="order"> Получить индивидуальное предложение</div>
 						</div>
 						<div class="main-img"><img src="img/seo.png" alt="" /></div>
 					</div>
@@ -168,61 +231,97 @@
 				<div class="section-title">9 причин заказать SEO-продвижение сайта в «Снайпере»</div>
 				<div class="advant">
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#cup-nine"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-title">9 лет</div>
 							<div class="advant__el-text">успешной работы в интернет-маркетинге</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#key"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-title">25 000+</div>
 							<div class="advant__el-text">коммерческих ключевых слов, по которым продвигаем наших клиентов</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#cup-place"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-title">B топ-20</div>
 							<div class="advant__el-text">SEO-компаний Сибири по версии «Рейтинг Рунета»</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#project"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-title">400+</div>
 							<div class="advant__el-text">выполненных проектов</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#users"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-title">800 000+</div>
 							<div class="advant__el-text">посетителей сайтов наших клиентов из поисковых систем</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#cup-win"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-title">В топ-50</div>
 							<div class="advant__el-text">всероссийского рейтинга «SEO глазами клиентов-2017»</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#seo-key"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-text">Сертифициронанные специалисты Яндекс. Метрика,Яндекс.Директ, Google Analytics</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#certs"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-text">Белые <br> методы продвижения</div>
 						</div>
 					</div>
 					<div class="advant__el">
-						<div class="advant__el-icon"><img src="img/cup-nine.png" alt="" /></div>
+						<div class="advant__el-icon">
+							<svg class="icon">
+								<use xlink:href="#payment"></use>
+							</svg>
+						</div>
 						<div class="advant__el-content">
 							<div class="advant__el-text">Гибкость <br> ценовой политики</div>
 						</div>
@@ -239,7 +338,7 @@
 						<div class="offer__el-title">По позициям</div>
 						<div class="offer__el-val">От 17 000 ₽ / мес.</div>
 						<div class="offer__el-text">Выведение сайта в Топ 10 поисковых систем по оговоренным запросам Работа с коммерческими факторами Работа над повышением конверсии Работа над юзабилити</div>
-						<div class="offer__el-get">Оценить мой сайт</div>
+						<div class="offer__el-get modal-get" data-modal="order">Оценить мой сайт</div>
 					</div>
 					<div class="offer__el">
 						<div class="offer__el-title">По трафику</div>
@@ -252,19 +351,19 @@
 							<p>Работа над юзабилити</p>
 							<p>Настройка инструментов повышения продаж</p>
 						</div>
-						<div class="offer__el-get">Оценить мой сайт</div>
+						<div class="offer__el-get modal-get" data-modal="order">Оценить мой сайт</div>
 					</div>
 					<div class="offer__el">
 						<div class="offer__el-title">Комплексный подход</div>
 						<div class="offer__el-val">От 40 000 ₽ / мес.</div>
 						<div class="offer__el-text">Продвижение вашего проекта с использованием всех возможностей SEO. Улучшение юзабилити, интеграция онлайн-сервисов.Комплексное продвижение сайтов в «Снайпер» – это продвижение в поисковых системах по максимальному количеству запросов и полная техническая доработка сайта. В арсенале наших опытных специалистов больше полусотни инструментов, позволяющих им без труда справляться с поставленной задачей.</div>
-						<div class="offer__el-get">Оценить мой сайт</div>
+						<div class="offer__el-get modal-get" data-modal="order">Оценить мой сайт</div>
 					</div>
 					<div class="offer__el">
 						<div class="offer__el-title">Vip-пакет</div>
 						<div class="offer__el-val">От 100 000 ₽ / мес.</div>
 						<div class="offer__el-text">Продвижение Вашего проекта с использованием всех инструментов интернет-маркетинга по максимуму! SEO-продвижение, контекстная реклама, SMM, медийная реклама и другие инструменты</div>
-						<div class="offer__el-get">Оценить мой сайт</div>
+						<div class="offer__el-get modal-get" data-modal="order">Оценить мой сайт</div>
 					</div>
 				</div>
 			</div>
@@ -325,97 +424,160 @@
 						<div class="why-head__el">Как у нас:</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#engine"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">3 основных вида работ: SEO, контекстная реклама, медийная реклама (баннеры).</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#engine"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Широкий набор инструментария: SEO-продвижение, контекстная реклама, SMM, таргетированная и баннерная реклама, контент-маркетинг и др.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#clock"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">10 часов на проект в месяц.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#clock"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">От 30 до 70 человеко-часов на проект.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#team"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Нет полноценно укомплектованного штата специалистов, из-за чего компания не может выполнять все работы по сайту.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#team"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Вы получите команду штатных профессионалов: программисты, SEO-специалисты, копирайтеры, дизайнеры, менеджер по работе с клиентами и др.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#box"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Менеджеры-новички, которые не могут должным образом донести информацию до клиента от специалистов компании.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#box"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Личный постоянный менеджер, имеющий большой опыт работы с проектами по продвижению.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#analitic"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Новые способы размещения искать сложно и дорого. Используются шаблонные наработки.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#analitic"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Огромная база знаний по проектам, выбор наиболее оптимального способа в каждой из ниш.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#collect"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Постоянные дополнительные счета за программирование, необходимое для продвижения сайта, и другие доработки по сайту.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#collect"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Большинство доработок, необходимых для продвижения сайта, уже включены в конечную стоимость.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#umbrela"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Экстенсивный подход к рекламе, который приводит к нерациональному расходованию средств.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#umbrela"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Максимально эффективно настраиваем рекламу, корректируем ее в ходе работы для получения наилучших результатов</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#land"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Если не получается достигнуть заданных позиций в течение двух-трех месяцев — отказ от клиента.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#land"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Достигаем высоких результатов по 90% наших проектов.</div>
 					</div>
 					<div class="why-row">
+						<div class="why__icon-mobile">
+							<svg class="icon">
+								<use xlink:href="#window"></use>
+							</svg>
+						</div>
+						<div class="why-title-mobile">Большинство компаний:</div>
 						<div class="why__text">Отчет представляет собой всего лишь выжимку из Яндекс.Метрики.</div>
 						<div class="why__icon">
 							<svg class="icon">
 								<use xlink:href="#window"></use>
 							</svg>
 						</div>
+						<div class="why-title-mobile">Как у нас:</div>
 						<div class="why__text">Предоставляем более детальный отчет о проделанных работах и результатах. По каждому виду рекламы готовим отдельные отчеты.</div>
 					</div>
 				</div>
 				<div class="form-order-wrap">
-					<form class="form-order" action="#">
+					<form class="validate-form form-order" action="javascript:void(null);">
 						<div class="input-row">
-							<input class="input" type="text" placeholder="Ваше имя" />
+							<input class="input" type="text" name="name" placeholder="Ваше имя" />
 						</div>
 						<div class="input-row">
-							<input class="input" type="text" placeholder="Сайт" />
+							<input class="input" type="text" name="adres" placeholder="Адрес сайта" />
 						</div>
 						<div class="input-row">
-							<input class="input" type="text" placeholder="Телефон" />
+							<input class="input" type="text" name="phone" placeholder="Ваш телефон" />
 						</div>
 						<input class="form-order-get" type="submit" value="Не хочу как у всех, хочу с Вами" />
 					</form>
@@ -527,261 +689,271 @@
 						<div class="tabs-head__el">Аналитика</div>
 					</div>
 					<!--tab one-->
-					<div class="tabs-content tabs-content--active">
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#umbrela"></use>
-								</svg>
+					<div class="tabs-content-wrap">
+						<div class="tabs-content tabs-content--active slider">
+							<div class="tabs-col tabs-col--four">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#king"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Анализ ниши</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Конкуренты</li>
+										<li>Сервисы конкурентов</li>
+										<li>Анализ целевой аудитории</li>
+										<li>Ассортимент по тематике</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tabs-col__title">Анализ ниши</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Конкуренты</li>
-									<li>Сервисы конкурентов</li>
-									<li>Анализ целевой аудитории</li>
-									<li>Ассортимент по тематике</li>
-								</ul>
+							<div class="tabs-col tabs-col--four">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#ways"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Семантическое ядро</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Маски запросов</li>
+										<li>Ключевые запросы</li>
+										<li>Кластеризация</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#diamond"></use>
-								</svg>
+							<div class="tabs-col tabs-col--four">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#curve"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Анализ статистики</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Показатели сайта</li>
+										<li>Постановка KPI</li>
+										<li>Запросы сайта</li>
+										<li>Динамика позиций</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tabs-col__title">Семантическое ядро</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Маски запросов</li>
-									<li>Ключевые запросы</li>
-									<li>Кластеризация</li>
-								</ul>
-							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#engine"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Анализ статистики</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Показатели сайта</li>
-									<li>Постановка KPI</li>
-									<li>Запросы сайта</li>
-									<li>Динамика позиций</li>
-								</ul>
-							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#creative"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Аудит сайта</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Технический аудит</li>
-									<li>Аудит юзабилити</li>
-									<li>Подготовка ТЗ</li>
-								</ul>
+							<div class="tabs-col tabs-col--four">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#checked-paper"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Аудит сайта</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Технический аудит</li>
+										<li>Аудит юзабилити</li>
+										<li>Подготовка ТЗ</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!--tab two-->
-					<div class="tabs-content">
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#umbrela"></use>
-								</svg>
+					<div class="tabs-content-wrap">
+						<div class="tabs-content slider">
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#mounts"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Выбор стратегии</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Постановка целей</li>
+										<li>Задачи команде</li>
+										<li>Назначение ответственных</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tabs-col__title">Выбор стратегии</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Постановка целей</li>
-									<li>Задачи команде</li>
-									<li>Назначение ответственных</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#folders"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Оптимизация структуры</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Внедрение рекомендаций</li>
+										<li>ЧПУ</li>
+										<li>«Хлебные крошки»</li>
+										<li>Улучшение индексации</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#diamond"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Оптимизация структуры</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Внедрение рекомендаций</li>
-									<li>ЧПУ</li>
-									<li>«Хлебные крошки»</li>
-									<li>Улучшение индексации</li>
-								</ul>
-							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#engine"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Сервисы</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Screaming Frod SEO Spider</li>
-									<li>KeyCollector & Serpstat</li>
-									<li>Сайтрепорт & Pixeltools</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#cloud"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Сервисы</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Screaming Frod SEO Spider</li>
+										<li>KeyCollector & Serpstat</li>
+										<li>Сайтрепорт & Pixeltools</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!--tab three-->
-					<div class="tabs-content">
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#umbrela"></use>
-								</svg>
+					<div class="tabs-content-wrap">
+						<div class="tabs-content slider">
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#typer"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Создание контента</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>ТЗ на тексты</li>
+										<li>Написание текстов</li>
+										<li>ТЗ на размещение</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tabs-col__title">Создание контента</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>ТЗ на тексты</li>
-									<li>Написание текстов</li>
-									<li>ТЗ на размещение</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#pages"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Оптимизация контента</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Текущие страницы</li>
+										<li>Оптимизация заголовков</li>
+										<li>Оптимизация навигации</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#diamond"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Оптимизация контента</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Текущие страницы</li>
-									<li>Оптимизация заголовков</li>
-									<li>Оптимизация навигации</li>
-								</ul>
-							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#engine"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Внутренняя оптимизация</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Мета теги</li>
-									<li>Заголовки страниц</li>
-									<li>Микроразметка</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#engine"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Внутренняя оптимизация</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Мета теги</li>
+										<li>Заголовки страниц</li>
+										<li>Микроразметка</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!--tab four-->
-					<div class="tabs-content">
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#umbrela"></use>
-								</svg>
+					<div class="tabs-content-wrap">
+						<div class="tabs-content slider">
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#in"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Коммерческие факторы</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Матрица коммерческих факторов</li>
+										<li>Работа с факторами доверия к компании</li>
+										<li>Улучшение функционала</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tabs-col__title">Коммерческие факторы</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Матрица коммерческих факторов</li>
-									<li>Работа с факторами доверия к компании</li>
-									<li>Улучшение функционала</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#coins"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Внедрение целевого действия</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Оптимизация призыва к действию</li>
+										<li>Повышение лояльности посетителей</li>
+										<li>Концепция продуктовой совокупности</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#diamond"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Внедрение целевого действия</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Оптимизация призыва к действию</li>
-									<li>Повышение лояльности посетителей</li>
-									<li>Концепция продуктовой совокупности</li>
-								</ul>
-							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#engine"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Расширение тематики</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Новые разделы сайта</li>
-									<li>Тегирование</li>
-									<li>Настройка фильтрации</li>
-									<li>Работа с дополнительными источниками трафика</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#key"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Расширение тематики</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Новые разделы сайта</li>
+										<li>Тегирование</li>
+										<li>Настройка фильтрации</li>
+										<li>Работа с дополнительными источниками трафика</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!--tab five-->
-					<div class="tabs-content">
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#umbrela"></use>
-								</svg>
+					<div class="tabs-content-wrap">
+						<div class="tabs-content slider">
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#list-charts"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Веб-аналитика</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Глубина просмотров</li>
+										<li>Посещения</li>
+										<li>Отказы</li>
+										<li>Конверсия</li>
+									</ul>
+								</div>
 							</div>
-							<div class="tabs-col__title">Веб-аналитика</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Глубина просмотров</li>
-									<li>Посещения</li>
-									<li>Отказы</li>
-									<li>Конверсия</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#ways"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Доработки</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Улучшение дизайна</li>
+										<li>Расширение семантики</li>
+										<li>Дальнейшее планирование</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#diamond"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Доработки</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Улучшение дизайна</li>
-									<li>Расширение семантики</li>
-									<li>Дальнейшее планирование</li>
-								</ul>
-							</div>
-						</div>
-						<div class="tabs-col">
-							<div class="tabs-col__icon">
-								<svg class="icon">
-									<use xlink:href="#engine"></use>
-								</svg>
-							</div>
-							<div class="tabs-col__title">Удержание позиций</div>
-							<div class="tabs-col__text">
-								<ul>
-									<li>Достигнутые позиции</li>
-									<li>Постоянная оптимизация</li>
-								</ul>
+							<div class="tabs-col">
+								<div class="tabs-col__icon">
+									<svg class="icon">
+										<use xlink:href="#first"></use>
+									</svg>
+								</div>
+								<div class="tabs-col__title">Удержание позиций</div>
+								<div class="tabs-col__text">
+									<ul>
+										<li>Достигнутые позиции</li>
+										<li>Постоянная оптимизация</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -789,7 +961,7 @@
 			</div>
 		</div>
 		<!--offer-->
-		<div class="section section--command section--mount" id="tocommand" style="background-image:url('img/gray-mount.png')">
+		<div class="section section--command" id="tocommand" style="background-image:url('img/gray-mount.png')">
 			<div class="main-cont">
 				<div class="section-title">Наша команда профессионалов и экспертов</div>
 				<div class="command">
@@ -865,15 +1037,15 @@
 				<div class="section-title section-title--white section-title--sm">Будем рады помочь в продвижении Вашего сайта!</div>
 				<div class="order">
 					<div class="order-title">Заполните форму ниже, и мы свяжемся с Вами как можно быстрее:</div>
-					<form class="order-form" action="#">
+					<form class="validate-form order-form" action="javascript:void(null);">
 						<div class="input-row">
-							<input class="input" type="text" placeholder="Ваше имя" />
+							<input class="input" type="text" name="name" placeholder="Ваше имя" />
 						</div>
 						<div class="input-row">
-							<input class="input" type="text" placeholder="Адрес вашего сайта" />
+							<input class="input" type="text" name="adres" placeholder="Адрес вашего сайта" />
 						</div>
 						<div class="input-row">
-							<input class="input" type="text" placeholder="Телефон" />
+							<input class="input" type="text" name="phone" placeholder="Телефон" />
 						</div>
 						<div class="check-el agreement">
 							<label class="style-label style-label--checkbox">
@@ -889,14 +1061,68 @@
 						<input class="form-get form-get--yellow" type="submit" value="Отправить заявку!" />
 					</form>
 				</div>
-				<div class="order-phone">Или ждем Ваших звонков по тел. 8 800 775 53 46, +7 383 247 88 94</div>
+				<div class="order-phone">Или ждем Ваших звонков:</div><a class="order-phone__el" href="tel:8 800 775 53 46">8 800 775 53 46</a><a class="order-phone__el" href="tel:+7 383 247 88 94">+7 (383)247 88 94</a>
 			</div>
 		</div>
+		<!--block footer-->
+		<div class="modal-layer">
+			<div class="modal-filter"></div>
+			<div class="modal-wrap">
+				<div class="modal" data-modal="order">
+					<div class="modal-content">
+						<div class="modal-close">
+							<svg class="icon">
+								<use xlink:href="#close"></use>
+							</svg>
+						</div>
+						<div class="modal-title">Оставьте заявку</div>
+						<div class="modal-text">Мы ответим Вам максимально быстро</div>
+						<form class="validate-form" action="javascript:void(null);">
+							<div class="input-row">
+								<input class="input" type="text" name="name" placeholder="Ваше имя" />
+							</div>
+							<input-row>
+								<input class="input" type="text" name="adres" placeholder="Адрес сайта" />
+							</input-row>
+							<div class="input-row">
+								<input class="input" type="text" name="phone" placeholder="Ваш телефон" />
+							</div>
+							<div class="agree-row">
+								<div class="check-el">
+									<label class="style-label style-label--checkbox">
+										<input class="sytle-input" type="checkbox" name="agree" />
+										<div class="sytle-input-element">
+											<svg class="icon-check">
+												<use xlink:href="#checked"></use>
+											</svg>
+										</div>
+										<div class="sytle-input-text"></div>
+									</label>
+								</div>
+								<div class="agree-row__text">Нажимая на кнопку «Отправить заявку!», вы соглашаетесь на обработку<a href="#">персональных данных</a></div>
+							</div>
+							<input class="modal-send" type="submit" value="Отправить заявку" />
+						</form>
+					</div>
+				</div>
+				<!--success message-->
+				<div class="modal" data-modal="truemessage">
+					<div class="modal-content modal-content--true">
+						<svg class="icon">
+							<use xlink:href="#interface"></use>
+						</svg>
+						<div class="modal-text-true">Ваша заявка принята</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--block footer end-->
 		<!--build:js js/combined.js-->
 		<script src="bower/jquery/dist/jquery.js"></script>
 		<script src="bower/slick-carousel/slick/slick.js"></script>
 		<script src="bower/tilt/tilt.js"></script>
 		<script src="bower/page-scroll-to-id/jquery.malihu.PageScroll2id.js"></script>
+		<script src="bower/jquery-validation/dist/jquery.validate.min.js"></script>
 		<!-- endbuild-->
 		<script src="js/script.js"></script>
 		<script src="js/script-edit.js"></script>

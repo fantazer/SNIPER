@@ -3,6 +3,25 @@ include block_html/_include.pug
 
 //panel
 
+.slide-menu
+	.slide-menu__list
+		-
+			var items = [
+			{'icon':'house','name':'Начало','link':'#tostart'},
+			{'icon':'creative','name':'Преимущества','link':'#toadvant1'},
+			{'icon':'banknote','name':'Стоимость','link':'#topay'},
+			{'icon':'diamond','name':'Почему мы?','link':'#towhy'},
+			{'icon':'gears','name':'Технологии','link':'#totech'},
+			{'icon':'startup','name':'Команда','link':'#tocommand'},
+			{'icon':'contact','name':'Контакты','link':'#tocontact'}
+			];
+		each item in items
+			a(href=item.link rel='m_PageScroll2id').panel__el
+				.panel__el-icon
+					+icon(item.icon,"icon")
+				.panel__el-text #{item.name}
+		.slide-menu-get.modal-get(data-modal="order") Консультация
+
 .panel
 	-
 		var items = [
@@ -30,13 +49,16 @@ include block_html/_include.pug
 					//img(src="img/logo-white-2.png", alt="" class="logo-black")
 					img(src="img/logo-black.png", alt="" class="logo-black")
 				.header-menu
-					a(href="#").header-menu__el Что мы предлагаем?
-					a(href="#").header-menu__el Почему мы?
-					a(href="#").header-menu__el Технологии
+					a(href="#topay" rel='m_PageScroll2id').header-menu__el Что мы предлагаем?
+					a(href="#towhy" rel='m_PageScroll2id').header-menu__el Почему мы?
+					a(href="#totech" rel='m_PageScroll2id').header-menu__el Технологии
 				.header-phone
 					a(href="tel:8 800 775 53 46").header-phone__el 8 800 775 53 46
 					a(href="tel:8 383 247 88 94").header-phone__el 8 383 247 88 94
-				a(href="#").header-get Консультация
+				.header-get.modal-get(data-modal="order") Консультация
+				.head-toggle
+					+icon("menu","icon icon-open")
+					+icon("close","icon icon-close")
 
 	.main-block
 		.main-cont
@@ -62,7 +84,7 @@ include block_html/_include.pug
 								.tender-el__val 2
 								span рублей за визит
 						.tender-text В месяц продвижения с гарантией роста трафика и позиций
-					.tender-get  Получить индивидуальное предложение
+					div(data-modal="order").modal-get.tender-get  Получить индивидуальное предложение
 				.main-img
 					img(src="img/seo.png", alt="")
 
@@ -102,53 +124,53 @@ include block_html/_include.pug
 		.advant
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("cup-nine","icon")
 				.advant__el-content
 					.advant__el-title 9 лет
 					.advant__el-text успешной работы в интернет-маркетинге
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("key","icon")
 				.advant__el-content
 					.advant__el-title 25 000+
 					.advant__el-text коммерческих ключевых слов, по которым продвигаем наших клиентов
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("cup-place","icon")
 				.advant__el-content
 					.advant__el-title B топ-20
 					.advant__el-text SEO-компаний Сибири по версии «Рейтинг Рунета»
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("project","icon")
 				.advant__el-content
 					.advant__el-title 400+
 					.advant__el-text выполненных проектов
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("users","icon")
 				.advant__el-content
 					.advant__el-title 800 000+
 					.advant__el-text посетителей сайтов наших клиентов из поисковых систем
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("cup-win","icon")
 				.advant__el-content
 					.advant__el-title В топ-50
 					.advant__el-text всероссийского рейтинга «SEO глазами клиентов-2017»
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("seo-key","icon")
 				.advant__el-content
 					.advant__el-text Сертифициронанные специалисты Яндекс. Метрика,Яндекс.Директ, Google Analytics
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("certs","icon")
 				.advant__el-content
 					.advant__el-text Белые <br> методы продвижения
 			.advant__el
 				.advant__el-icon
-					img(src="img/cup-nine.png", alt="")
+					+icon("payment","icon")
 				.advant__el-content
 					.advant__el-text Гибкость <br> ценовой политики
 
@@ -161,7 +183,7 @@ include block_html/_include.pug
 				.offer__el-title По позициям
 				.offer__el-val От 17 000 ₽ / мес.
 				.offer__el-text Выведение сайта в Топ 10 поисковых систем по оговоренным запросам Работа с коммерческими факторами Работа над повышением конверсии Работа над юзабилити
-				.offer__el-get Оценить мой сайт
+				div(data-modal="order").offer__el-get.modal-get Оценить мой сайт
 			.offer__el
 				.offer__el-title По трафику
 				.offer__el-val От 17 000 ₽ / мес.+ от 2 ₽ за визит
@@ -172,17 +194,17 @@ include block_html/_include.pug
 					p Работа над повышением конверсии
 					p Работа над юзабилити
 					p Настройка инструментов повышения продаж
-				.offer__el-get Оценить мой сайт
+				div(data-modal="order").offer__el-get.modal-get Оценить мой сайт
 			.offer__el
 				.offer__el-title Комплексный подход
 				.offer__el-val От 40 000 ₽ / мес.
 				.offer__el-text Продвижение вашего проекта с использованием всех возможностей SEO. Улучшение юзабилити, интеграция онлайн-сервисов.Комплексное продвижение сайтов в «Снайпер» – это продвижение в поисковых системах по максимальному количеству запросов и полная техническая доработка сайта. В арсенале наших опытных специалистов больше полусотни инструментов, позволяющих им без труда справляться с поставленной задачей.
-				.offer__el-get Оценить мой сайт
+				div(data-modal="order").offer__el-get.modal-get Оценить мой сайт
 			.offer__el
 				.offer__el-title Vip-пакет
 				.offer__el-val От 100 000 ₽ / мес.
 				.offer__el-text Продвижение Вашего проекта с использованием всех инструментов интернет-маркетинга по максимуму! SEO-продвижение, контекстная реклама, SMM, медийная реклама и другие инструменты
-				.offer__el-get Оценить мой сайт
+				div(data-modal="order").offer__el-get.modal-get Оценить мой сайт
 
 //example 2
 .section.section-example.section--mount(style="background-image:url('img/gray-mount.png')")
@@ -223,60 +245,96 @@ include block_html/_include.pug
 				.why-head__el Большинство компаний:
 				.why-head__el Как у нас:
 			.why-row
+				.why__icon-mobile
+					+icon("engine","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text 3 основных вида работ: SEO, контекстная реклама, медийная реклама (баннеры).
 				.why__icon
 					+icon("engine","icon")
+				.why-title-mobile Как у нас:
 				.why__text Широкий набор инструментария: SEO-продвижение, контекстная реклама, SMM, таргетированная и баннерная реклама, контент-маркетинг и др.
 			.why-row
+				.why__icon-mobile
+					+icon("clock","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text 10 часов на проект в месяц.
 				.why__icon
 					+icon("clock","icon")
+				.why-title-mobile Как у нас:
 				.why__text От 30 до 70 человеко-часов на проект.
 			.why-row
+				.why__icon-mobile
+					+icon("team","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Нет полноценно укомплектованного штата специалистов, из-за чего компания не может выполнять все работы по сайту.
 				.why__icon
 					+icon("team","icon")
+				.why-title-mobile Как у нас:
 				.why__text Вы получите команду штатных профессионалов: программисты, SEO-специалисты, копирайтеры, дизайнеры, менеджер по работе с клиентами и др.
 			.why-row
+				.why__icon-mobile
+					+icon("box","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Менеджеры-новички, которые не могут должным образом донести информацию до клиента от специалистов компании.
 				.why__icon
 					+icon("box","icon")
+				.why-title-mobile Как у нас:
 				.why__text Личный постоянный менеджер, имеющий большой опыт работы с проектами по продвижению.
 			.why-row
+				.why__icon-mobile
+					+icon("analitic","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Новые способы размещения искать сложно и дорого. Используются шаблонные наработки.
 				.why__icon
 					+icon("analitic","icon")
+				.why-title-mobile Как у нас:
 				.why__text Огромная база знаний по проектам, выбор наиболее оптимального способа в каждой из ниш.
 			.why-row
+				.why__icon-mobile
+					+icon("collect","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Постоянные дополнительные счета за программирование, необходимое для продвижения сайта, и другие доработки по сайту.
 				.why__icon
 					+icon("collect","icon")
+				.why-title-mobile Как у нас:
 				.why__text Большинство доработок, необходимых для продвижения сайта, уже включены в конечную стоимость.
 			.why-row
+				.why__icon-mobile
+					+icon("umbrela","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Экстенсивный подход к рекламе, который приводит к нерациональному расходованию средств.
 				.why__icon
 					+icon("umbrela","icon")
+				.why-title-mobile Как у нас:
 				.why__text Максимально эффективно настраиваем рекламу, корректируем ее в ходе работы для получения наилучших результатов
 			.why-row
+				.why__icon-mobile
+					+icon("land","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Если не получается достигнуть заданных позиций в течение двух-трех месяцев — отказ от клиента.
 				.why__icon
 					+icon("land","icon")
+				.why-title-mobile Как у нас:
 				.why__text Достигаем высоких результатов по 90% наших проектов.
 			.why-row
+				.why__icon-mobile
+					+icon("window","icon")
+				.why-title-mobile Большинство компаний:
 				.why__text Отчет представляет собой всего лишь выжимку из Яндекс.Метрики.
 				.why__icon
 					+icon("window","icon")
+				.why-title-mobile Как у нас:
 				.why__text Предоставляем более детальный отчет о проделанных работах и результатах. По каждому виду рекламы готовим отдельные отчеты.
 
 
 		.form-order-wrap
-			form(action="#").form-order
+			form.validate-form.form-order( action="javascript:void(null);")
 				.input-row
-					input(type="text" placeholder="Ваше имя" class="input")
+					input(type="text" name="name" placeholder="Ваше имя").input
 				.input-row
-					input(type="text" placeholder="Сайт" class="input")
+					input(type="text" name="adres" placeholder="Адрес сайта").input
 				.input-row
-					input(type="text" placeholder="Телефон" class="input")
+					input(type="text" name="phone" placeholder="Ваш телефон").input
 				input(type="submit" value="Не хочу как у всех, хочу с Вами" class="form-order-get")
 
 //example 3
@@ -349,171 +407,176 @@ include block_html/_include.pug
 				.tabs-head__el Конверсия
 				.tabs-head__el Аналитика
 			//tab one
-			.tabs-content.tabs-content--active
-				.tabs-col
-					.tabs-col__icon
-						+icon("umbrela","icon")
-					.tabs-col__title Анализ ниши
-					.tabs-col__text
-						ul
-							li Конкуренты
-							li Сервисы конкурентов
-							li Анализ целевой аудитории
-							li Ассортимент по тематике
-				.tabs-col
-					.tabs-col__icon
-						+icon("diamond","icon")
-					.tabs-col__title Семантическое ядро
-					.tabs-col__text
-						ul
-							li Маски запросов
-							li Ключевые запросы
-							li Кластеризация
-				.tabs-col
-					.tabs-col__icon
-						+icon("engine","icon")
-					.tabs-col__title Анализ статистики
-					.tabs-col__text
-						ul
-							li Показатели сайта
-							li Постановка KPI
-							li Запросы сайта
-							li Динамика позиций
-				.tabs-col
-					.tabs-col__icon
-						+icon("creative","icon")
-					.tabs-col__title Аудит сайта
-					.tabs-col__text
-						ul
-							li Технический аудит
-							li Аудит юзабилити
-							li Подготовка ТЗ
+			.tabs-content-wrap
+				.tabs-content.tabs-content--active.slider
+					.tabs-col.tabs-col--four
+						.tabs-col__icon
+							+icon("king","icon")
+						.tabs-col__title Анализ ниши
+						.tabs-col__text
+							ul
+								li Конкуренты
+								li Сервисы конкурентов
+								li Анализ целевой аудитории
+								li Ассортимент по тематике
+					.tabs-col.tabs-col--four
+						.tabs-col__icon
+							+icon("ways","icon")
+						.tabs-col__title Семантическое ядро
+						.tabs-col__text
+							ul
+								li Маски запросов
+								li Ключевые запросы
+								li Кластеризация
+					.tabs-col.tabs-col--four
+						.tabs-col__icon
+							+icon("curve","icon")
+						.tabs-col__title Анализ статистики
+						.tabs-col__text
+							ul
+								li Показатели сайта
+								li Постановка KPI
+								li Запросы сайта
+								li Динамика позиций
+					.tabs-col.tabs-col--four
+						.tabs-col__icon
+							+icon("checked-paper","icon")
+						.tabs-col__title Аудит сайта
+						.tabs-col__text
+							ul
+								li Технический аудит
+								li Аудит юзабилити
+								li Подготовка ТЗ
 
 
 			//tab two
-			.tabs-content
-				.tabs-col
-					.tabs-col__icon
-						+icon("umbrela","icon")
-					.tabs-col__title Выбор стратегии
-					.tabs-col__text
-						ul
-							li Постановка целей
-							li Задачи команде
-							li Назначение ответственных
-				.tabs-col
-					.tabs-col__icon
-						+icon("diamond","icon")
-					.tabs-col__title Оптимизация структуры
-					.tabs-col__text
-						ul
-							li Внедрение рекомендаций
-							li ЧПУ
-							li «Хлебные крошки»
-							li Улучшение индексации
-				.tabs-col
-					.tabs-col__icon
-						+icon("engine","icon")
-					.tabs-col__title Сервисы
-					.tabs-col__text
-						ul
-							li Screaming Frod SEO Spider
-							li KeyCollector & Serpstat
-							li Сайтрепорт & Pixeltools
+			.tabs-content-wrap
+				.tabs-content.slider
+					.tabs-col
+						.tabs-col__icon
+							+icon("mounts","icon")
+						.tabs-col__title Выбор стратегии
+						.tabs-col__text
+							ul
+								li Постановка целей
+								li Задачи команде
+								li Назначение ответственных
+					.tabs-col
+						.tabs-col__icon
+							+icon("folders","icon")
+						.tabs-col__title Оптимизация структуры
+						.tabs-col__text
+							ul
+								li Внедрение рекомендаций
+								li ЧПУ
+								li «Хлебные крошки»
+								li Улучшение индексации
+					.tabs-col
+						.tabs-col__icon
+							+icon("cloud","icon")
+						.tabs-col__title Сервисы
+						.tabs-col__text
+							ul
+								li Screaming Frod SEO Spider
+								li KeyCollector & Serpstat
+								li Сайтрепорт & Pixeltools
 
 			//tab three
-			.tabs-content
-				.tabs-col
-					.tabs-col__icon
-						+icon("umbrela","icon")
-					.tabs-col__title Создание контента
-					.tabs-col__text
-						ul
-							li ТЗ на тексты
-							li Написание текстов
-							li ТЗ на размещение
-				.tabs-col
-					.tabs-col__icon
-						+icon("diamond","icon")
-					.tabs-col__title Оптимизация контента
-					.tabs-col__text
-						ul
-							li Текущие страницы
-							li Оптимизация заголовков
-							li Оптимизация навигации
-				.tabs-col
-					.tabs-col__icon
-						+icon("engine","icon")
-					.tabs-col__title Внутренняя оптимизация
-					.tabs-col__text
-						ul
-							li Мета теги
-							li Заголовки страниц
-							li Микроразметка
+			.tabs-content-wrap
+				.tabs-content.slider
+					.tabs-col
+						.tabs-col__icon
+							+icon("typer","icon")
+						.tabs-col__title Создание контента
+						.tabs-col__text
+							ul
+								li ТЗ на тексты
+								li Написание текстов
+								li ТЗ на размещение
+					.tabs-col
+						.tabs-col__icon
+							+icon("pages","icon")
+						.tabs-col__title Оптимизация контента
+						.tabs-col__text
+							ul
+								li Текущие страницы
+								li Оптимизация заголовков
+								li Оптимизация навигации
+					.tabs-col
+						.tabs-col__icon
+							+icon("engine","icon")
+						.tabs-col__title Внутренняя оптимизация
+						.tabs-col__text
+							ul
+								li Мета теги
+								li Заголовки страниц
+								li Микроразметка
 
 			//tab four
-			.tabs-content
-				.tabs-col
-					.tabs-col__icon
-						+icon("umbrela","icon")
-					.tabs-col__title Коммерческие факторы
-					.tabs-col__text
-						ul
-							li Матрица коммерческих факторов
-							li Работа с факторами доверия к компании
-							li Улучшение функционала
-				.tabs-col
-					.tabs-col__icon
-						+icon("diamond","icon")
-					.tabs-col__title Внедрение целевого действия
-					.tabs-col__text
-						ul
-							li Оптимизация призыва к действию
-							li Повышение лояльности посетителей
-							li Концепция продуктовой совокупности
-				.tabs-col
-					.tabs-col__icon
-						+icon("engine","icon")
-					.tabs-col__title Расширение тематики
-					.tabs-col__text
-						ul
-							li Новые разделы сайта
-							li Тегирование
-							li Настройка фильтрации
-							li Работа с дополнительными источниками трафика
+			.tabs-content-wrap
+				.tabs-content.slider
+					.tabs-col
+						.tabs-col__icon
+							+icon("in","icon")
+						.tabs-col__title Коммерческие факторы
+						.tabs-col__text
+							ul
+								li Матрица коммерческих факторов
+								li Работа с факторами доверия к компании
+								li Улучшение функционала
+					.tabs-col
+						.tabs-col__icon
+							+icon("coins","icon")
+						.tabs-col__title Внедрение целевого действия
+						.tabs-col__text
+							ul
+								li Оптимизация призыва к действию
+								li Повышение лояльности посетителей
+								li Концепция продуктовой совокупности
+					.tabs-col
+						.tabs-col__icon
+							+icon("key","icon")
+						.tabs-col__title Расширение тематики
+						.tabs-col__text
+							ul
+								li Новые разделы сайта
+								li Тегирование
+								li Настройка фильтрации
+								li Работа с дополнительными источниками трафика
 
 			//tab five
-			.tabs-content
-				.tabs-col
-					.tabs-col__icon
-						+icon("umbrela","icon")
-					.tabs-col__title Веб-аналитика
-					.tabs-col__text
-						ul
-							li Глубина просмотров
-							li Посещения
-							li Отказы
-							li Конверсия
-				.tabs-col
-					.tabs-col__icon
-						+icon("diamond","icon")
-					.tabs-col__title Доработки
-					.tabs-col__text
-						ul
-							li Улучшение дизайна
-							li Расширение семантики
-							li Дальнейшее планирование
-				.tabs-col
-					.tabs-col__icon
-						+icon("engine","icon")
-					.tabs-col__title Удержание позиций
-					.tabs-col__text
-						ul
-							li Достигнутые позиции
-							li Постоянная оптимизация
+			.tabs-content-wrap
+				.tabs-content.slider
+					.tabs-col
+						.tabs-col__icon
+							+icon("list-charts","icon")
+						.tabs-col__title Веб-аналитика
+						.tabs-col__text
+							ul
+								li Глубина просмотров
+								li Посещения
+								li Отказы
+								li Конверсия
+					.tabs-col
+						.tabs-col__icon
+							+icon("ways","icon")
+						.tabs-col__title Доработки
+						.tabs-col__text
+							ul
+								li Улучшение дизайна
+								li Расширение семантики
+								li Дальнейшее планирование
+					.tabs-col
+						.tabs-col__icon
+							+icon("first","icon")
+						.tabs-col__title Удержание позиций
+						.tabs-col__text
+							ul
+								li Достигнутые позиции
+								li Постоянная оптимизация
 
 //offer
-.section.section--command.section--mount#tocommand(style="background-image:url('img/gray-mount.png')")
+.section.section--command#tocommand(style="background-image:url('img/gray-mount.png')")
 	.main-cont
 		.section-title Наша команда профессионалов и экспертов
 		.command
@@ -571,13 +634,13 @@ include block_html/_include.pug
 		.order
 			.order-title Заполните форму ниже, и мы свяжемся с Вами как можно быстрее:
 
-			form(action="#").order-form
+			form.validate-form.order-form( action="javascript:void(null);")
 				.input-row
-					input(type="text" placeholder="Ваше имя" class="input")
+					input(type="text" name="name" placeholder="Ваше имя" class="input")
 				.input-row
-					input(type="text" placeholder="Адрес вашего сайта" class="input")
+					input(type="text" name="adres" placeholder="Адрес вашего сайта" class="input")
 				.input-row
-					input(type="text" placeholder="Телефон" class="input")
+					input(type="text" name="phone" placeholder="Телефон" class="input")
 				.check-el.agreement
 					label.style-label.style-label--checkbox
 						input(type="checkbox").sytle-input
@@ -586,6 +649,9 @@ include block_html/_include.pug
 						.sytle-input-text Нажимая на кнопку «Отправить заявку!», вы соглашаетесь на обработку
 							a(href="#") персональных данных
 				input(type="submit" value="Отправить заявку!" class="form-get form-get--yellow")
-		.order-phone Или ждем Ваших звонков по тел. 8 800 775 53 46, +7 383 247 88 94
+		.order-phone Или ждем Ваших звонков:
+		a(href="tel:8 800 775 53 46").order-phone__el 8 800 775 53 46
+		a(href="tel:+7 383 247 88 94").order-phone__el +7 (383)247 88 94
 
++footer()
 include ./block_html/_script.pug

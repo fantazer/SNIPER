@@ -18,7 +18,10 @@ body
 
 .main-cont
 	center(1200px,10px)
-
+	+below(1200px)
+		padding-left: 60px
+	+below(960px)
+		padding-left: 10px
 
 //modal
 .modal-layer
@@ -47,7 +50,7 @@ body
 	position: absolute
 	top: 0
 	left: 0
-	background: #18191d
+	background: #18191da1
 	width: 100%
 	height: 100vh
 	min-height 100vh
@@ -68,13 +71,14 @@ body
 		padding: 20px
 	+below(640px)
 		height: 100%
-		overflow-y scroll
 		padding: 20px 10px
+		overflow-y scroll
 		width: 100%!important
 	//background: #2b8850
 	background: white
 	position: relative
 	padding: 40px
+	br(10px)
 	+below(768px)
 		width: 80%
 
@@ -85,8 +89,7 @@ body
 		margin-bottom: 20px
 
 .modal__show
-	+below(1024px)
-		overflow-Y:scroll
+
 	max-height 100%
 	opacity 1
 	transform translateY(0)
@@ -103,7 +106,7 @@ body
 		+below(768px)
 			size 15px
 		size 20px
-		fill white
+		fill black
 
 .modal-open
 	overflow: hidden
@@ -120,55 +123,130 @@ body
 	width: 100%
 	height: 100%
 	flex(mid)
-
+	overflow-y auto
 .modal-title
 	+below(768px)
 		font-size: 20px
-	@extend .type--md
-	letter-spacing 1.2px
+	margin-bottom: 20px
 	text-align: center
-	up()
-	margin-bottom: 30px
+	font-weight:900
+	font-size: 24px
+	color black
 
 .modal-text
 	+below(768px)
 		width: 100%
 		font-size: 12px
 	text-align: center
-	margin: 20px auto 40px auto
+	margin: 10px auto 20px auto
+	//width: 80%
 	font-size: 16px
 	line-height: 1.2
 	color #5f5f5f
 
-.modal-agree
-	margin-top: 30px
-	margin-bottom: 40px
+.validate-form
+	input,textarea
+		width: 100%
+		margin-bottom: 20px
+
+.modal-send
+	@extend .btn--md
+	@extend .btn--mark
+	border 0
+	width: 100%
+	font-weight: 600
+	padding: 15px
+	font-size: 16px
+
+.agree-row
+	f()
+	align-items: center
+	margin:10px 0 20px 0
+	a
+		color black!important
+		text-decoration: underline!important
+		display: inline-block
+		margin-left: 5px
+
+.agree-row__text
+	width: 100%
+	color black
+	font-size: 12px
+	a
+		color #9c9a9a
+		text-decoration: none
+.field-error
+
+
+.field-error
+	input
+		border 1px solid $yellow
+.style-label--checkbox.field-error
+	.sytle-input-element
+		border 2px solid $yellow
+
+.modal-content--true
+	flex(mid)
+	fl()
+	br(10px)
+	.icon
+		fill green
+		size 120px
+		margin-bottom: 20px
+.modal-text-true
+	text-align: center
+	font-weight: bold
 //modal===end
 
+
 .main
+	+below(1440px)
+		min-height 550px
+	+below(640px)
+		min-height 400px
+		height: calc(100vh - 40px)
 	bg-full()
 	height: 100vh
 	border-top 6px solid #d12024
-//.header-wrap
-//.main-cont
+.header-wrap
+	+below(1200px)
+		.main-cont
+			padding-left: 10px
 .header
+	+below(960px)
+		padding-top: 0
 	flex(between)
 	padding-top: 15px
-//.header-logo
+.header-logo
+	+below(960px)
+		img
+			width: 100px
+	+below(640px)
+		img
+			width: 80px
 .header-menu
+	+below(960px)
+		display: none
 	flex(between)
 	width: 35%
 .header-menu__el
-	color white
-	tr(all)
-	font-weight: 700
+	+below(1200px)
+		font-size: 10px
 	up()
+	tr(all)
+	background: none !important
+	color white
+	font-weight: 700
 	font-size: 12px
 	&:hover
 		opacity:.7
 		color white
-//.header-phone
+.header-phone
+	+below(960px)
+		margin-left: auto
 .header-phone__el
+	+below(640px)
+		font-size: 12px
 	display: block
 	color white
 	font-weight:700
@@ -178,6 +256,8 @@ body
 		color white
 
 .header-get
+	+below(960px)
+		display: none
 	@extend .btn--md
 	@extend .btn--mark
 
@@ -186,8 +266,17 @@ body
 	height: calc(100vh - 68px)
 //.main-cont
 .main-content
+	+below(960px)
+		width: 65%
+	+below(640px)
+		width: 100%
 	width: 54%
 .main-title
+	+below(1440px)
+		font-size: 28px
+	+below(640px)
+		font-size: 24px
+		margin-top: -6%
 	font-weight:900
 	font-size: 44px
 	color white
@@ -196,11 +285,19 @@ body
 		display: inline
 		color $yellow
 .main-text
+	+below(1440px)
+		font-size: 14px
+	+below(640px)
+		font-size: 12px
+		br
+			display: none
 	color white
 	line-height: 1.6
 	margin-bottom: 4%
 //.offer
 .tender-wrap
+	+below(1440px)
+		display: none
 	width: 450px
 	flex(between)
 	margin-bottom: 3%
@@ -219,15 +316,28 @@ body
 		fill $yellow
 
 .tender-text
+	+below(1440px)
+		display: none
 	color white
 	opacity: .8
 	margin-bottom: 5%
 .tender-get
 	@extend .btn--md
 	@extend .btn--mark
-//.main-img
-
+.main-img
+	+below(1440px)
+		flex(mid)
+		img
+			width: 70%
+	+below(960px)
+		width: 40%
+	+below(640px)
+		display: none
 .panel
+	+below(1440px)
+		width: 40px
+	+below(960px)
+		display: none
 	width 65px
 	background bg-grey
 	position fixed
@@ -240,6 +350,8 @@ body
 	&:hover
 		width 270px
 .panel__el
+	+below(1440px)
+		width: 200px
 	flex(between)
 	justify-content flex-start
 	padding-right 20px
@@ -264,30 +376,52 @@ body
 	.icon
 		fill black!important
 .panel__el-icon
+	+below(1440px)
+		size 40px
 	.icon
+		+below(1440px)
+			size 25px
 		size 35px
 		fill white
 	size 65px
 	flex(mid)
 .panel__el-text
+	+below(1440px)
+		font-size: 14px
 	color white
 	font-size 16px
 	font-weight 700
 	padding-left: 20px
 
 .section
+	+below(1024px)
+		padding: 50px 0
 	//height: 100vh
 	width: 100%
 	flex(mid)
 	padding: 150px 0
 .case
+	+below(1024px)
+		fw()
 	f()
 	justify-content: space-between
 .case-chart
+	+below(1024px)
+		width: 80%
+		margin-bottom: 40px
+	+below(640px)
+		width: 100%
 	width: 60%
 .case-info
+	+below(1024px)
+		width: 100%
 	width: 35%
 .section-title
+	+below(1024px)
+		font-size: 32px
+	+below(768px)
+		font-size: 24px
+		margin-bottom: 30px
 	up()
 	color $red
 	font-size: 40px
@@ -300,17 +434,26 @@ body
 .section-title--sm
 	width: 80%
 .section--mount
+	+below(1024px)
+		.main-cont
+			center(768px,10px)
 	background-repeat: no-repeat
 	background-position: bottom right
 
-
+.section--command
+	background-repeat: no-repeat
+	background-position: bottom right
 .case-el
 	f()
 	margin-bottom: 20px
 
 .case-el__icon
+	+below(1024px)
+		margin-right: 20px
 	margin-right: 40px
 	.icon
+		+below(1024px)
+			size 40px
 		size 50px
 		fill $red
 //.icon
@@ -321,6 +464,8 @@ body
 	font-size: 20px
 	line-height: 1
 .case-el__val
+	+below(1024px)
+		font-size: 28px
 	font-size: 40px
 	color $red
 	font-weight:700
@@ -370,32 +515,45 @@ body
 	animation:  slideInDown  1s 1 ease-in-out;
 	z-index 2
 	box-shadow 0 0 10px #dbdbdb
-	height: 65px
 	//border-top 1px solid $red
+	.header
+		+below(960px)
+			padding-bottom: 0
+		padding-bottom: 15px
 	.header-logo
+		+below(640px)
+			width: 80px
 		width: 140px
 	.header-menu__el
 		color black
 	.header-phone__el
 		color black
-	.header
-		padding: 10px 0
 	.logo-black
 		display: block
 	.logo-white
 		display: none
+	.head-toggle
+		.icon
+			fill black
 .section-gray
 	background: #f4f4f4
 .advant
-	flex(between)
+	f()
+	justify-content: space-between
 	fw()
 .advant__el
+	+below(768px)
+		width: 48%
+	+below(640px)
+		width: 100%
 	width: 30%
 	f()
 	margin-bottom: 6%
 .advant__el-icon
-	size 50px
-	margin-right: 30px
+	.icon
+		size 50px
+		margin-right: 30px
+		fill $red
 
 .advant__el-content
 	width: calc(100% - 90px)
@@ -411,9 +569,18 @@ body
 	font-family: 'PT Sans', sans-serif
 
 .offer
+	+below(1024px)
+		fw()
 	f()
 	justify-content: space-between
 .offer__el
+	+below(1024px)
+		width 48%
+		margin-bottom: 30px
+	+below(640px)
+		width: 100%
+		&:last-child
+			margin-bottom: 0
 	f()
 	fl()
 	width: 23%
@@ -439,8 +606,12 @@ body
 	padding: 15px
 
 .why
+	+below(768px)
+		margin-bottom: 30px
 	margin-bottom: 100px
 .why-head
+	+below(640px)
+		display: none
 	f()
 	justify-content: space-between
 .why-head__el
@@ -450,11 +621,17 @@ body
 	font-weight:900
 
 .why-row
+	+below(640px)
+		fl()
 	f()
 	justify-content: space-between
 	&:nth-child(even)
 		background: white
 .why__text
+	+below(640px)
+		width: 100%
+		padding: 20px
+		font-size: 14px
 	padding: 30px
 	width: calc(50% - 50px)
 	font-family:'PT Sans', sans-serif
@@ -463,13 +640,22 @@ body
 	f()
 	align-items: center
 .why__icon
+	+below(640px)
+		display: none
 	width: 100px
 	padding: 20px 0
 	flex(mid)
 	.icon
 		size 50px
 		fill $red
-
+.why__icon-mobile
+	+above(640px)
+		display: none
+	width: 100%
+	padding: 20px
+	.icon
+		size 50px
+		fill $red
 
 .form-order-wrap
 	max-width 550px
@@ -481,6 +667,8 @@ body
 	margin-bottom: 20px
 
 .form-order-get
+	+below(640px)
+		font-size: 12px
 	@extend .btn--md
 	@extend .btn--red
 	margin-left: auto
@@ -488,11 +676,20 @@ body
 	display: block
 	margin-top: 40px
 
-//.tabs
 .tabs-head
+	+below(640px)
+		overflow-y: auto
+
 	f()
+	position: relative
 	justify-content: space-between
+
 .tabs-head__el
+	+below(1024px)
+		text-transform: none
+	+below(640px)
+		min-width: 130px
+		padding: 10px
 	width: 19%
 	text-align: center
 	background: #f9f9f9
@@ -505,23 +702,53 @@ body
 	up()
 	font-size: 12px
 	&:hover
-		border-top 2px solid $red
-		color $red
-		background: white
+		+above(641px)
+			border-top 2px solid $red
+			color $red
+			background: white
 
 .tabs-head__el--active
 	border-top 2px solid $red
 	color $red
 	background: white
 .tabs-content
-	padding: 80px 80px 120px 80px
 	background: white
-	display: none
-	height: 500px
+	height: 0
+	overflow: hidden
+	transform:translateY(9999px)
+	position: relative
+	+below(640px)
+		.slick-dots
+			bottom -35px
+			left 0
+.slick-dotted.slick-slider
+	margin-bottom: 0
+
 .tabs-content--active
+	+below(1024px)
+		padding: 40px 40px 80px 40px
+		height: 400px
+	+below(640px)
+		display: block
+		padding: 30px
+		height: auto
 	f()
+	padding: 80px 80px 120px 80px
 	justify-content: space-between
+	overflow: initial
+	height: 500px
+	overflow: initial
+	transform:translateY(0px)
+
+.tabs-content-wrap
+	width: 100%
 .tabs-col
+	+below(640px)
+		width: 100%
+	width: 30%
+.tabs-col--four
+	+below(640px)
+		width: 100%
 	width: 23%
 .tabs-col__icon
 	.icon
@@ -539,10 +766,18 @@ body
 			margin-bottom: 20px
 
 .command
+	+below(1024px)
+		grid-gap 20px
+	+below(768px)
+		grid-template-columns 1fr 1fr
+	+below(640px)
+		grid-template-columns 1fr
 	display: grid
 	grid-gap 30px
 	grid-template-columns repeat(4, 1fr)
 .command__el
+	+below(768px)
+		padding: 30px 30px 50px 30px
 	background: white
 	padding: 60px 20px 100px 20px
 	flex(mid)
@@ -551,8 +786,13 @@ body
 	cp()
 	br(10px)
 .command__el-img
+	+below(768px)
+		margin-bottom: 30px
 	margin-bottom: 100px
 .command__el-title
+	+below(1024px)
+		font-size: 16px
+	margin-top: auto
 	font-weight: 700
 	font-size: 18px
 	color $red
@@ -564,8 +804,11 @@ body
 
 .order
 	margin-bottom: 40px
-
+	.error
+		color white
 .order-form
+	+below(768px)
+		width: 100%
 	width: 60%
 
 .form-get
@@ -587,6 +830,9 @@ body
 		align-items: flex-start
 	.sytle-input-text
 		width: calc(100% - 60px)
+		a
+			display: inline-block
+			margin:0 3px
 	.sytle-input-text
 		color white
 		font-family: "PT Sans"
@@ -599,3 +845,93 @@ body
 	color white
 	font-weight: 700
 	font-size: 18px
+	margin-bottom: 20px
+.head-toggle
+	size 50px
+	flex(mid)
+	cp()
+	+above(1025px)
+		display: none
+	.icon
+		size 25px
+		fill white
+	.icon-close
+		display: none
+
+.head-toggle--open
+	.icon-close
+		display: block
+	.icon-open
+		display: none
+
+.slide-menu
+	+above(1025px)
+		display: none !important
+	+below(960px)
+		top 50px
+	+below(480px)
+		width: 70%
+	background:$red
+	position: fixed
+	height: calc(100% - 50px) //Отступ хедер
+	z-index 1250
+	top 80px
+	right 0
+	width: 320px
+	transform translateX(100%)
+	tr(all)
+	.panel__el
+		padding: 5px 0
+		width: 100%
+		min-width auto
+.slide-menu--open
+	transform translateX(0%)
+	overflow-y: auto
+.slide-menu__list
+	margin-bottom: 40px
+.slide-menu__list-el
+	display: block
+	margin-bottom: 40px
+	color white
+	font-size: 16px
+	up()
+	tr(all)
+	&:hover
+		color red
+.body-fix
+	overflow: hidden!important
+	position: fixed!important
+	overflowY: scroll!important
+	width:100%!important
+
+.slide-menu-get
+	@extend .btn--md
+	@extend .btn--mark
+	margin-top: 30px
+	margin-left: auto
+	margin-right: auto
+	display: block
+	max-width 80%
+
+.why-title-mobile
+	+above(640px)
+		display: none
+	font-weight:900
+	font-size: 16px
+	padding-left: 20px
+
+.order-phone__el
+	+below(640px)
+		font-size: 24px
+	&:hover
+		color white
+	font-size: 40px
+	margin-bottom: 20px
+	margin-right: 20px
+	color white
+	font-weight: 700
+	display: inline-block
+
+.error
+	display: block
+	margin-bottom: 20px
