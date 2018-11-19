@@ -8,7 +8,8 @@
     echo $phone;
     echo $text;
 
-    $to = 'kuznecovs45@gmail.com';
+    //$to = 'kuznecovs45@gmail.com';
+    $to = 'info@sniper-m.ru';
     if ($name) {$mainName="Имя: <strong>$name</strong><br>"  ;}
     if ($phone) {$mainPhone="Телефон: <strong>$phone</strong><br>"  ;}
     if ($text) {$mainText="Адрес сайта: <strong>$text</strong><br>"  ;}

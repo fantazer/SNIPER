@@ -1,7 +1,7 @@
 (function($){
     $(window).load(function(){
         $("a[rel='m_PageScroll2id']").mPageScroll2id({
-				    offset:60,
+				    offset:0,
 				    highlightClass:"panel__el--active",
 				    onComplete:function(){
 				    	//$('.header-navs').hide();
@@ -15,7 +15,7 @@ $(document).ready(function () {
 	e.preventDefault();
 
 	$('html, body').animate({
-		scrollTop: $($(this).attr('href')).offset().top - 50
+		scrollTop: $($(this).attr('href')).offset().top - 0
 	}, 500, 'linear');
 });
 	//scroll to id
@@ -141,9 +141,8 @@ $(document).ready(function () {
 								settings: {
 									slidesToShow: 1,
 									slidesToScroll: 1,
-									prevArrow: false,
-    							nextArrow: false,
-									dots: true,
+									arrows: false,
+									dots: true
 								}
 							}
 						]
@@ -158,6 +157,13 @@ $(document).ready(function () {
 		var currentSize = $(window).width();
 		sliderMobile();
 		return currentSize;
+	});
+	$('.slider-control--right').click(function(){
+		$(".slider").slick('slickNext');
+	});
+
+	$('.slider-control--left').click(function(){
+		$(".slider").slick('slickPrev');
 	});
 	//mobile slider === end
 

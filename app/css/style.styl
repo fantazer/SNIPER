@@ -204,7 +204,7 @@ body
 		min-height 550px
 	+below(640px)
 		min-height 400px
-		height: calc(100vh - 40px)
+		height: 100vh
 	bg-full()
 	height: 100vh
 	border-top 6px solid #d12024
@@ -676,6 +676,8 @@ body
 	display: block
 	margin-top: 40px
 
+.tabs
+	position: relative
 .tabs-head
 	+below(640px)
 		overflow-y: auto
@@ -745,6 +747,7 @@ body
 .tabs-col
 	+below(640px)
 		width: 100%
+		padding-left: 25px
 	width: 30%
 .tabs-col--four
 	+below(640px)
@@ -935,3 +938,35 @@ body
 .error
 	display: block
 	margin-bottom: 20px
+
+.slick-dots li button:before
+	content '•'
+	font-size: 12px !important
+
+//for custom navigation
+.slider-control
+	+above(641px)
+		display: none
+	round()
+	flex(mid)
+	tr(all)
+	size 40px
+	background: white
+	position: absolute
+	top 50%
+	margin-top: 10px
+	z-index 10
+	cp()
+	.icon
+		size 28px
+		fill $red
+
+.slider-control--left
+	left 0px
+.slider-control--right
+	right 0px
+
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+	select:focus, textarea:focus, input:focus, input
+		font-size: 16px!important
+
