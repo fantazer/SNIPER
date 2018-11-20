@@ -18,7 +18,7 @@ body
 
 .main-cont
 	center(1200px,10px)
-	+below(1200px)
+	+below(1280px)
 		padding-left: 60px
 	+below(960px)
 		padding-left: 10px
@@ -198,7 +198,6 @@ body
 	font-weight: bold
 //modal===end
 
-
 .main
 	+below(1440px)
 		min-height 550px
@@ -272,7 +271,7 @@ body
 		width: 100%
 	width: 54%
 .main-title
-	+below(1440px)
+	+below(1200px)
 		font-size: 28px
 	+below(640px)
 		font-size: 24px
@@ -285,7 +284,7 @@ body
 		display: inline
 		color $yellow
 .main-text
-	+below(1440px)
+	+below(1200px)
 		font-size: 14px
 	+below(640px)
 		font-size: 12px
@@ -297,21 +296,30 @@ body
 //.offer
 .tender-wrap
 	+below(1440px)
+		width: 400px
+	+below(1200px)
 		display: none
 	width: 450px
 	flex(between)
 	margin-bottom: 3%
 .tender-el
+	+below(1440px)
+		font-size: 24px
 	font-size: 32px
 	font-weight:700
 	color white
 	width: 150px
 .tender-el__val
+	+below(1440px)
+		font-size: 64px
 	color $yellow
 	display: inline-block
 	font-size: 90px
 .tender-plus
 	.icon
+		+below(1440px)
+			margin-left: -40px
+			size 40px
 		size 58px
 		fill $yellow
 
@@ -328,7 +336,7 @@ body
 	+below(1440px)
 		flex(mid)
 		img
-			width: 70%
+			width: 100%
 	+below(960px)
 		width: 40%
 	+below(640px)
@@ -812,7 +820,7 @@ body
 .order-form
 	+below(768px)
 		width: 100%
-	width: 60%
+	width: 80%
 
 .form-get
 	@extend .btn--md
@@ -965,6 +973,44 @@ body
 	left 0px
 .slider-control--right
 	right 0px
+
+.order-wrap
+	f()
+	justify-content: space-between
+	align-items: flex-start
+.order-content
+	+below(1200px)
+		width: 100%
+	width: 70%
+
+.order-slogan
+	+below(1200px)
+		display: none
+	color white
+	width: 30%
+	font-weight:700
+	font-size: 28px
+	line-height: 1.6
+	position: relative
+	margin-right: 30px
+	font-style italic
+	&:before
+		content ''
+		position: absolute
+		bottom -30px
+		left -30px
+		size 50px
+		border-left 1px solid white
+		border-bottom 1px solid white
+	&:after
+		content ''
+		position: absolute
+		top -30px
+		right -30px
+		size 50px
+		border-right 1px solid white
+		border-top 1px solid white
+
 
 @media screen and (-webkit-min-device-pixel-ratio: 0)
 	select:focus, textarea:focus, input:focus, input
